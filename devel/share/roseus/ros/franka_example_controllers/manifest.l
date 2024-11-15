@@ -1,0 +1,1 @@
+/workspaces/ros-gazebo-gym-ws/devel/.private/franka_example_controllers/share/roseus/ros/franka_example_controllers/manifest.l

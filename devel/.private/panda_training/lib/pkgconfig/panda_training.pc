@@ -1,0 +1,8 @@
+prefix=/workspaces/ros-gazebo-gym-ws/devel/.private/panda_training
+
+Name: panda_training
+Description: Description of panda_training
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: ros_gazebo_gym rospy

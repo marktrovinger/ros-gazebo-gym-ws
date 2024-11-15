@@ -1,0 +1,1 @@
+/workspaces/ros-gazebo-gym-ws/devel/.private/panda_training/lib/pkgconfig/panda_training.pc
