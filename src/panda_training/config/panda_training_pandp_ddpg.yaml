@@ -1,0 +1,17 @@
+# This file contains the parameters for the ros_gazebo_gym_panda_example.py script.
+panda_training:
+  # ros_ws_abspath: "/home/user/simulation_ws"  # NOTE: Path to the ROS workspace.
+
+  # DDPG Parameters
+  # Folows the panda_gym results for pick-and-place
+  alpha: 0.001     # Learning Rate.
+  gamma: 0.95      # Discount factor.
+  n_episodes: 10
+  n_steps: 20000
+  batch_size: 256
+  replay_buffer_size: 1.0E+6
+  network_size: [256, 256, 256]
+
+  # Inference parameters.
+  inference: True
+  inference_n_episodes: 80

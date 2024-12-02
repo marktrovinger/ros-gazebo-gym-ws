@@ -10,4 +10,4 @@ panda_training:
 
   # Inference parameters.
   inference: True
-  inference_n_episodes: 10
+  inference_n_episodes: 80
