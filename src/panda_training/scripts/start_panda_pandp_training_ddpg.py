@@ -92,7 +92,7 @@ if __name__ == "__main__":  # noqa: C901
         "/panda_training/inference_n_episodes"
     )
     net_arch = rospy.get_param("panda_training/network_size")
-    buffer_size = rospy.get_param("panda_training/replay_buffer_size")
+    buffer_size = int(rospy.get_param("panda_training/replay_buffer_size"))
     batch_size = int(rospy.get_param("panda_training/batch_size"))
     total_timesteps = n_steps * n_episodes
 
