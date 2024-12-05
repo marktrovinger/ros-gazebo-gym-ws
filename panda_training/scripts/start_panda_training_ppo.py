@@ -98,7 +98,7 @@ if __name__ == "__main__":  # noqa: C901
 
     # Initializes the algorithm that we are going to use for learning.
     torch.cuda.empty_cache()  # NOTE: Done to avoid CUDA out of memory error.
-    model = PPO("MlpPolicy", env, verbose=1, gamma=gamma, learning_rate=alpha)
+    model = PPO("MlpPolicy", env, verbose=2, gamma=gamma, learning_rate=alpha, device="cpu")
 
     # Train the algorithm.
     rospy.loginfo("Start training...")

@@ -15,15 +15,15 @@ Control arguments:
     <!--    The panda task environment.
         NOTE: Options: Reach, PickAndPlace, Slide, Push
     -->
-    <arg name="environment_type" default="pickandplace"/>
+    <arg name="environment_type" default="pick_and_place"/>
     <!--    Whether to use positive reward or not.-->
     <arg name="positive_reward" default="false"/>
 
     <!--Retrieve ros_gazebo_gym panda environment training parameters-->
-    <include file="$(find panda_training)/launch/load_panda_pandp_training_params.launch.xml"/>
+    <include file="$(find panda_training)/launch/load_panda_example_training_params.launch.xml"/>
 
     <!--Launch the training system-->
-    <node pkg="panda_training" name="panda_training_ppo" type="start_panda_pandp_training_ppo.py" output="screen">
+    <node pkg="panda_training" name="panda_training_ppo" type="start_panda_training_ppo.py" output="screen">
         <param name="control_type" value="$(arg control_type)"/>
         <param name="positive_reward" value="$(arg positive_reward)"/>
         <param name="environment_type" value="$(arg environment_type)"/>

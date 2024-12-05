@@ -33,6 +33,7 @@ if __name__ == "__main__":  # noqa: C901
         positive_reward = False
     try:
         env_type = rospy.get_param("~environment_type")
+        #env_type = "PandaPickAndPlace-v1"
     except KeyError:
         env_type = "slide"
     try:
@@ -60,8 +61,9 @@ if __name__ == "__main__":  # noqa: C901
         ros_exit_gracefully(
             shutdown_message=f"Shutting down {rospy.get_name()}", exit_code=1
         )
-
+    env_id = "ros_gazebo_gym:PandaPickAndPlace-v1"
     # Initialize the ros_gazebo_gym Panda environment.
+
     rospy.loginfo(f"Creating ros_gazebo_gym '{env_id}' gymnasium environment...")
     env = gym.make(
         env_id,
@@ -98,7 +100,7 @@ if __name__ == "__main__":  # noqa: C901
 
     # Initializes the algorithm that we are going to use for learning.
     torch.cuda.empty_cache()  # NOTE: Done to avoid CUDA out of memory error.
-    model = PPO("MlpPolicy", env, verbose=1, gamma=gamma, learning_rate=alpha)
+    model = PPO("MlpPolicy", env, verbose=1, gamma=gamma, learning_rate=alpha, device="cpu")
 
     # Train the algorithm.
     rospy.loginfo("Start training...")
